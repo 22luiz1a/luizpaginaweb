@@ -3,178 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Tech</title>
+    <title>Blog</title>
     <style>
-        :root {
-            --bg-body: #f4f6f8;
-            --bg-card: #ffffff;
-            --bg-header: #183C63;
-            --text-primary: #1a1a1a;
-            --text-secondary: #555555;
-            --text-header: #ffffff;
-            --border-color: #e0e0e0;
-            --btn-bg: #f0f4f8;
-            --btn-hover: #e2e8f0;
-        }
-
-        /* Variáveis do Modo Escuro */
-        body.dark-mode {
-            --bg-body: #121212;
-            --bg-card: #1e1e1e;
-            --bg-header: #0f253f;
-            --text-primary: #e0e0e0;
-            --text-secondary: #a0a0a0;
-            --text-header: #ffffff;
-            --border-color: #333333;
-            --btn-bg: #2a2a2a;
-            --btn-hover: #3a3a3a;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-body);
-            color: var(--text-primary);
-            transition: background-color 0.3s, color 0.3s;
+            background-color: #ffffff;
         }
 
-        /* Cabeçalho */
+        /* Banner Superior */
         header {
-            background-color: var(--bg-header);
-            color: var(--text-header);
-            padding: 32px 20px;
+            background-color: #183C63;
+            color: #FFFFFF;
             text-align: center;
-            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: normal;
         }
 
         header p {
-            font-size: 1.1rem;
-            margin: 0;
-            opacity: 0.9;
-        }
-
-        /* Botão para alternar Modo Escuro */
-        .theme-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 20px;
-            cursor: pointer;
             font-size: 0.95rem;
-            transition: background 0.3s;
+            margin: 0;
         }
 
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Container Principal em Grid (Cards) */
+        /* Container Principal */
         main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f7faf7;
+            padding: 16px;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        /* Estilo dos Cards */
+        /* Cada Artigo/Post em Flexbox para alinhar imagem e texto lado a lado */
         article {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
             display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, background-color 0.3s, border-color 0.3s;
+            align-items: center;
+            gap: 20px;
         }
 
-        article:hover {
-            transform: translateY(-4px);
-        }
-
+        /* Estilo da Imagem ajustada para 80x80 */
         article img {
-            width: 100%;
-            height: 180px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
-        }
-
-        .card-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
+            border-radius: 4px;
+            flex-shrink: 0;
         }
 
         article h2 {
-            font-size: 1.35rem;
-            margin: 0 0 8px 0;
-            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 10px;
         }
 
+        /* Classe específica para destacar apenas o autor */
         .artigo-autor {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .conteudo {
-            font-size: 1rem;
-            line-height: 1.5;
-            color: var(--text-primary);
-            margin: 0 0 20px 0;
-            flex-grow: 1;
-        }
-
-        /* Botões de Reação */
-        .card-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        button.reaction-btn {
-            padding: 8px 16px;
             font-size: 0.95rem;
-            border: 1px solid var(--border-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        article .conteudo {
+            font-size: 0.95rem;
+            margin: 0 0 12px 0;
+        }
+
+        /* Estilo do botão de reação */
+        button {
+            padding: 6px 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
             border-radius: 20px;
-            background-color: var(--btn-bg);
-            color: var(--text-primary);
+            background-color: #ffffff;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            transition: background-color 0.2s;
         }
 
-        button.reaction-btn:hover {
-            background-color: var(--btn-hover);
+        button:hover {
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Meu Blog Tech</h1>
-        <p>Compartilhando conhecimento sobre tecnologia, programação e inovação.</p>
-        <button class="theme-toggle" id="toggleTheme">🌙 Modo Escuro</button>
+        <h1>Meu blog tech</h1>
+        <p>Vou compartilhar conhecimento sobre tecnologia e programação</p>
     </header>
 
     <main>
-        <!-- Post 1 -->
+        <!-- Primeiro Post -->
         <article>
-            <img src="images.blog.png" alt="Ilustração sobre desenvolvimento web">
-            <div class="card-content">
-                <h2>Boas-
+            <img src="images.blog.png" alt="Brinquedo do personagem Minion, amarelo e com óculos de proteção, segurando uma ferramenta azul e montado em um veículo cinza com rodas de engrenagem sobre fundo branco.">
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Luiz Eduardo</p>
+                <p class="conteudo">Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- Segundo Post -->
+        <article>
+            <img src="images.blog.png" alt="Brinquedo do personagem Minion, amarelo e com óculos de proteção, segurando uma ferramenta azul e montado em um veículo cinza com rodas de engrenagem sobre fundo branco.">
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Luiz Eduardo</p>
+                <p class="conteudo">Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+    </main>
+
+    <!-- Script de interatividade JavaScript com limitação de curtidas -->
+    <script>
+        const botoes = document.querySelectorAll("button");
+
+        botoes.forEach(function (botao) {
+            let curtiu = false;
+
+            botao.addEventListener("click", function botaoClicado() {
+                let texto = botao.querySelector("span");
+
+                if (curtiu === false) {
+                    texto.textContent++;
+                    curtiu = true;
+                } else {
+                    texto.textContent--;
+                    curtiu = false;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
