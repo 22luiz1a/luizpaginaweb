@@ -4,98 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
-    <style>
-        body {
-            font-family: serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
-
-        /* Banner Superior */
-        header {
-            background-color: #183C63;
-            color: #FFFFFF;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 16px;
-        }
-
-        header h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-
-        header p {
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        /* Container Principal */
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #f7faf7;
-            padding: 16px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* Cada Artigo/Post em Flexbox para alinhar imagem e texto lado a lado */
-        article {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Estilo da Imagem ajustada para 80x80 */
-        article img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 4px;
-            flex-shrink: 0;
-        }
-
-        article h2 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        /* Classe específica para destacar apenas o autor */
-        .artigo-autor {
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        article .conteudo {
-            font-size: 0.95rem;
-            margin: 0 0 12px 0;
-        }
-
-        /* Estilo do botão de reação */
-        button {
-            padding: 6px 12px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            background-color: #ffffff;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        button:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -132,26 +41,6 @@
         </article>
     </main>
 
-    <!-- Script de interatividade JavaScript com limitação de curtidas -->
-    <script>
-        const botoes = document.querySelectorAll("button");
-
-        botoes.forEach(function (botao) {
-            let curtiu = false;
-
-            botao.addEventListener("click", function botaoClicado() {
-                let texto = botao.querySelector("span");
-
-                if (curtiu === false) {
-                    texto.textContent++;
-                    curtiu = true;
-                } else {
-                    texto.textContent--;
-                    curtiu = false;
-                }
-            });
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
