@@ -4,106 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Tech - Notícias e Curiosidades</title>
-    
-    <style>
-        /* =========================================================
-           ESTILOS (CSS)
-           ========================================================= */
-        :root {
-            --bg-color: #f4f6f8;
-            --card-bg: #ffffff;
-            --text-color: #333333;
-            --text-muted: #666666;
-            --header-bg: #1e293b;
-            --header-text: #ffffff;
-            --border-color: #e2e8f0;
-            --btn-bg: #f1f5f9;
-            --btn-hover: #e2e8f0;
-        }
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        /* Estilos do Modo Escuro */
-        body.dark-mode {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --header-bg: #020617;
-            --header-text: #f8fafc;
-            --border-color: #334155;
-            --btn-bg: #334155;
-            --btn-hover: #475569;
-        }
+    <header class="header-principal">
+        <div class="header-conteudo">
+            <h1>Meu blog tech</h1>
+            <p>Vou compartilhar conhecimento sobre tecnologia e programação</p>
+        </div>
+        <!-- Botão para alternar o Dark Mode (Interação / JS) -->
+        <button id="btn-theme" aria-label="Alternar modo escuro">🌙 Modo Escuro</button>
+    </header>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    <main class="container">
+        <!-- Seção em grade de cards (Layout / Responsividade) -->
+        <section class="posts-grid">
+            
+            <!-- Primeiro Post -->
+            <article class="post-card">
+                <img src="images.blog.png" alt="Brinquedo do personagem Minion com óculos de proteção e ferramenta sobre veículo de engrenagens." class="post-imagem">
+                <div class="post-conteudo">
+                    <h2>Boas-vindas ao Blog Tech!</h2>
+                    <p class="artigo-autor">Por: <strong>Luiz Eduardo</strong></p>
+                    <p class="conteudo">Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                    <p class="artigo-fonte">Fonte: Blog Tech</p>
+                    
+                    <div class="post-acoes">
+                        <button type="button" aria-label="Curtir com coração">❤️ <span>0</span></button>
+                        <button type="button" aria-label="Curtir com joinha">👍 <span>0</span></button>
+                    </div>
+                </div>
+            </article>
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+            <!-- Segundo Post -->
+            <article class="post-card">
+                <img src="images.blog.png" alt="Brinquedo do personagem Minion com óculos de proteção e ferramenta sobre veículo de engrenagens." class="post-imagem">
+                <div class="post-conteudo">
+                    <h2>O que é Responsividade Web?</h2>
+                    <p class="artigo-autor">Por: <strong>Luiz Eduardo</strong></p>
+                    <p class="conteudo">Aprenda como adaptar seu site para diferentes tamanhos de tela e oferecer uma boa experiência no desktop e mobile.</p>
+                    <p class="artigo-fonte">Fonte: W3C Web Standards</p>
+                    
+                    <div class="post-acoes">
+                        <button type="button" aria-label="Curtir com coração">❤️ <span>0</span></button>
+                        <button type="button" aria-label="Curtir com joinha">👍 <span>0</span></button>
+                    </div>
+                </div>
+            </article>
 
-        /* Header */
-        .header-principal {
-            background-color: var(--header-bg);
-            color: var(--header-text);
-            padding: 2rem 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-        }
+            <!-- Terceiro Post (Corrigido) -->
+            <article class="post-card">
+                <img src="images.blog.png" alt="Brinquedo do personagem Minion com óculos de proteção e ferramenta sobre veículo de engrenagens." class="post-imagem">
+                <div class="post-conteudo">
+                    <h2>A Origem do Nome Bluetooth</h2>
+                    <p class="artigo-autor">Por: <strong>Felipe</strong></p>
+                    <p class="conteudo">
+                        Você sabia que a tecnologia sem fio Bluetooth recebeu esse nome em homenagem a um rei viking?<br><br>
+                        O rei Harald "Bluetooth" Gormsson ficou famoso por unificar a Dinamarca e a Noruega no século X, assim como o Bluetooth unifica conexões.
+                    </p>
+                    <p class="artigo-fonte">Fonte: The National Museum of Computing</p>
+                    
+                    <div class="post-acoes">
+                        <button type="button" aria-label="Curtir com coração">❤️ <span>0</span></button>
+                        <button type="button" aria-label="Curtir com joinha">👍 <span>0</span></button>
+                    </div>
+                </div>
+            </article>
 
-        .header-conteudo h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
+        </section>
+    </main>
 
-        #btn-theme {
-            background-color: var(--btn-bg);
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            padding: 0.6rem 1.2rem;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        #btn-theme:hover {
-            background-color: var(--btn-hover);
-        }
-
-        /* Layout Grid */
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        /* Card do Post */
-        .post-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .post-imagem {
-            width: 100%;
+    <script src="script.js"></script>
+</body>
+</html>
