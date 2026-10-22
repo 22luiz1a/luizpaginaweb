@@ -4,7 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Tech - Notícias e Curiosidades</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* [00:51] Ajustando a largura total da página */
+        body {
+            max-width: 100vw;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        /* Estilização do Header */
+        .header-principal {
+            background-color: #183C63;
+            color: #ffffff;
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #btn-theme {
+            background-color: #ffffff;
+            color: #183C63;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* [02:27] e [02:23] Organizando os posts com Flexbox e flex-wrap */
+        main.container {
+            padding: 20px;
+        }
+
+        .posts-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* [03:01] e [03:29] Definindo o tamanho e centralizando o conteúdo dos cards */
+        article.post-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            border: 1px solid #183C63;
+            border-radius: 8px;
+            background-color: #ffffff;
+            margin: 16px;
+            gap: 16px;
+            padding: 16px;
+            flex: 1 1 25%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-imagem {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .post-acoes button {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 4px;
+        }
+    </style>
 </head>
 <body>
 
@@ -53,7 +125,7 @@
                 </div>
             </article>
 
-            <!-- Terceiro Post (Corrigido) -->
+            <!-- Terceiro Post -->
             <article class="post-card">
                 <img src="images.blog.png" alt="Brinquedo do personagem Minion com óculos de proteção e ferramenta sobre veículo de engrenagens." class="post-imagem">
                 <div class="post-conteudo">
